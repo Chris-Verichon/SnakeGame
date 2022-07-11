@@ -3,6 +3,15 @@ body {
   max-height: 100vh;
 }
 
+.title {
+  position: absolute;
+  display: flex;
+  font-size: 3em;
+  color: rgba(255, 255, 255, 0.651);
+  justify-content: center;
+  margin: auto;
+}
+
 .imageBackground {
   position: absolute;
   z-index: -3;
