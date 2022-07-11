@@ -3,7 +3,7 @@
 const app = {
 
   init: function() {
-    if(snake.has_game_ended()) return;
+    if(snake.has_game_ended()) return menu.init();
 
     snake.changing_direction = false;
     setTimeout(function onTick() {

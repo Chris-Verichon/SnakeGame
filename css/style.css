@@ -11,6 +11,15 @@
   font-size: 5em;
 }
 
+.looseGame {
+  position: absolute;
+  top: 30%;
+  left: 37%;
+  font-size: 1em;
+  z-index: 3;
+  font-weight: bold;
+}
+
 @media all and (max-width: 600px) {
   #score {
     text-align: center;
