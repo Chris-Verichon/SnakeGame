@@ -70,4 +70,52 @@ const snake = {
         snake.snake.pop();
       }
   },
+
+  // Function to change direction whith arrow on keydown
+  change_direction: function(event) {
+    const LEFT_KEY = 37;
+    const RIGHT_KEY = 39;
+    const UP_KEY = 38;
+    const DOWN_KEY = 40;
+    
+  // Prevent the snake from reversing
+  
+    if (snake.changing_direction) return;
+    snake.changing_direction = true;
+    const keyPressed = event.keyCode;
+    const goingUp = snake.dy === -10;
+    const goingDown = snake.dy === 10;
+    const goingRight = snake.dx === 10;
+    const goingLeft = snake.dx === -10;
+    if (keyPressed === LEFT_KEY && !goingRight) {
+      snake.dx = -10;
+      snake.dy = 0;
+    }
+    if (keyPressed === UP_KEY && !goingDown) {
+      snake.dx = 0;
+      snake.dy = -10;
+    }
+    if (keyPressed === RIGHT_KEY && !goingLeft) {
+      snake.dx = 10;
+      snake.dy = 0;
+    }
+    if (keyPressed === DOWN_KEY && !goingUp) {
+      snake.dx = 0;
+      snake.dy = 10;
+    }
+  },
+
+  // Function limit game and define the limit to game over
+  has_game_ended: function() {
+    for (let i = 4; i < snake.snake.length; i++) {
+      if (snake.snake[i].x === snake.snake[0].x && snake.snake[i].y === snake.snake[0].y) return true
+    }
+    const hitLeftWall = snake.snake[0].x < 0;
+    const hitRightWall = snake.snake[0].x > snake.snakeboard.width - 10;
+    const hitToptWall = snake.snake[0].y < 0;
+    const hitBottomWall = snake.snake[0].y > snake.snakeboard.height - 10;
+    return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall
+  },
 };
+
+document.addEventListener("keydown", snake.change_direction);
