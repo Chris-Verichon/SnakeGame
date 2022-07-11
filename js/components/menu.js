@@ -1,11 +1,11 @@
 const menu = {
 
-  score: document.getElementById("score"),
+  root: document.getElementById("root"),
+  container: document.getElementsByClassName('popUp'),
   button: document.getElementsByClassName('button'),
 
   init: function() {
-    menu.createMesage(menu.score);
-    menu.restart(menu.score);
+    menu.createContainer(menu.root);
     menu.listener(menu.button);
   },
 
@@ -19,6 +19,15 @@ const menu = {
     location.reload();
   },
 
+  createContainer: function(dom) {
+    const newItem = document.createElement("div");
+    newItem.classList.add('popUp');
+    dom.appendChild(newItem);
+
+    menu.createMesage(newItem);
+    menu.restart(newItem);
+  },
+
   createMesage: function(dom) {
     const newItem = document.createElement("p");
     newItem.classList.add('looseGame')
@@ -30,7 +39,7 @@ const menu = {
     const newItem = document.createElement("button");
     newItem.type = 'button';
     newItem.classList.add('button')
-    newItem.innerHTML = 'Start';
+    newItem.innerHTML = 'start';
     dom.appendChild(newItem);
 
   },
