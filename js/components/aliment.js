@@ -18,4 +18,9 @@ const aliment = {
     aliment.snakeboard_ctx.fillRect(aliment.food_x, aliment.food_y, 10, 10);
     aliment.snakeboard_ctx.strokeRect(aliment.food_x, aliment.food_y, 10, 10);
   },
+
+  // Function to create one food element, random position on canvas
+  random_food: function(min, max) {
+    return Math.round((Math.random() * (max-min) + min) / 10) * 10;
+  },
 };
