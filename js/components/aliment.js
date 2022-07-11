@@ -23,4 +23,17 @@ const aliment = {
   random_food: function(min, max) {
     return Math.round((Math.random() * (max-min) + min) / 10) * 10;
   },
+
+  // function to generate food on canvas
+  gen_food: function() {
+    // Generate a random number the food x-coordinate
+    aliment.food_x = aliment.random_food(2, aliment.snakeboard.width - 10);
+    // Generate a random number for the food y-coordinate
+    aliment.food_y = aliment.random_food(2, aliment.snakeboard.height - 10);
+    // if the new food location is where the snake currently is, generate a new food location
+    snake.snake.forEach(function has_snake_eaten_food(part) {
+      const has_eaten = part.x == aliment.food_x && part.y == aliment.food_y;
+      if (has_eaten) aliment.gen_food();
+    });
+  },
 };
