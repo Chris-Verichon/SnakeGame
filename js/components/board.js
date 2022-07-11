@@ -4,7 +4,7 @@
 const board = {
 
   board_border: 'black',
-  board_background: "white",
+  board_background: "#cc8315f1",
 
   // Get the canvas element
   snakeboard: document.getElementById("snakeboard"),

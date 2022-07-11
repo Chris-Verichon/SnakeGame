@@ -1,8 +1,8 @@
 console.log('snake script')
 const snake = {
 
-  snake_col: 'lightblue',
-  snake_border: 'darkblue',
+  snake_col: '#06440e',
+  snake_border: '#04300a',
   snake: [
     {x: 200, y: 200},
     {x: 190, y: 200},

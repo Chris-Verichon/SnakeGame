@@ -13,8 +13,8 @@ const aliment = {
   },
 
   drawFood: function() {
-    aliment.snakeboard_ctx.fillStyle = 'lightgreen';
-    aliment.snakeboard_ctx.strokestyle = 'darkgreen';
+    aliment.snakeboard_ctx.fillStyle = '#882904';
+    aliment.snakeboard_ctx.strokestyle = '#661f03';
     aliment.snakeboard_ctx.fillRect(aliment.food_x, aliment.food_y, 10, 10);
     aliment.snakeboard_ctx.strokeRect(aliment.food_x, aliment.food_y, 10, 10);
   },
