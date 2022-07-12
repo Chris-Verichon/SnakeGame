@@ -2,7 +2,7 @@
 
 
 This app is host on Surge : 
-https://waiting-bridge.surge.sh/
+https://adhesive-tub.surge.sh/
 
 Aplication for the old Snake game, in fun mode.
 
